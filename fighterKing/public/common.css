@@ -1,0 +1,7 @@
+.twitterBut {
+  position: fixed;
+  right: 5%;
+  max-width: 80px;
+  top: 50px;
+  left: auto;
+}
