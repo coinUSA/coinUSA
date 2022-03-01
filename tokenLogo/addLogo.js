@@ -99,7 +99,7 @@ function url() {
     let symbol = document.querySelector("#symbol").value
     let decimals = document.querySelector("#decimals").value
     let logo = document.querySelector("#logo").value
-    document.querySelector("#url").value = `https://falcontokencoin.github.io/addLogo.html?chain=${chain}&token=${token}&symbol=${symbol}&decimals=${decimals}&logo=${logo}`
+    document.querySelector("#url").value = `https://coinusa.github.io/tokenLogo/?chain=${chain}&token=${token}&symbol=${symbol}&decimals=${decimals}&logo=${logo}`
 }
 
 async function initValue() {
