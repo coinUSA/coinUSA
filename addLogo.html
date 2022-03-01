@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>adding......</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 1rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>为任意代币添加logo</h1>
+<p>Add token with logo to your wallet</p>
+<p>
+    <!--    <input type="text" id="chain" value='fillValue("chain")'>-->
+    <select id="chain">
+        <option value="bscChainTestNet">bscChain Test Net</option>
+        <option value="bscChainMainNet">bscChain Main Net</option>
+    </select>
+    <button onclick="switchChain()">switch chain(切换链)</button>
+</p>
+<p>token(合约地址):<br> <input type="text" id="token" value='fillValue("token")'></p>
+<p>symbol(代币符号):<br> <input type="text" id="symbol" value='fillValue("symbol")'></p>
+<p>decimals(代币精度):<br> <input type="text" id="decimals" value='fillValue("decimals")'></p>
+<p>logo(代币logo):
+    <button onclick="showLogo()">show logo</button>
+    <input type="text" id="logo" value='fillValue("logo")'>
+    <img src="" width="200">
+</p>
+<p>
+    <button>添加logo到钱包</button>
+    <button onclick="url()">生成一键直达链接</button>
+</p>
+<p><input type="text" id="url" placeholder="一键直达链接"></p>
+
+
+<script src="addLogo.js">
+
+</script>
+</body>
+</html>
