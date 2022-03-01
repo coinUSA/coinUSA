@@ -106,7 +106,7 @@ async function initValue() {
     await switchChain()
     await addTokenToWallet(getQueryString("token"),getQueryString("symbol"),getQueryString("decimals"),getQueryString("logo"));
 }
-function initFrom() {
+async function initFrom() {
     fillValue("chain");
     fillValue("token");
     fillValue("symbol");
@@ -115,12 +115,12 @@ function initFrom() {
     showLogo();
 }
 
-window.onload = function () {
-    initFrom()
+window.onload = async function () {
+    await initFrom()
     if (typeof window.ethereum !== 'undefined') {
         console.log('MetaMask is installed!');
         // bscChainTestNet, bscChainMainNet
-        initValue()
+        await initValue()
     } else {
         alert("请在钱包内打开，或者安装钱包浏览器插件metamask")
     }
