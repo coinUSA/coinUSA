@@ -117,11 +117,13 @@ async function initFrom() {
 
 window.onload = async function () {
     await initFrom()
-    if (typeof window.ethereum !== 'undefined') {
-        console.log('MetaMask is installed!');
-        // bscChainTestNet, bscChainMainNet
-        await initValue()
-    } else {
-        alert("请在钱包内打开，或者安装钱包浏览器插件metamask")
-    }
+    setTimeout(async ()=>{
+        if (typeof window.ethereum !== 'undefined') {
+            console.log('MetaMask is installed!');
+            // bscChainTestNet, bscChainMainNet
+            await initValue()
+        } else {
+            alert("请在钱包内打开，或者安装钱包浏览器插件metamask")
+        }
+    }, 1500)
 }
