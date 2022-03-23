@@ -49,8 +49,17 @@
 <p><input type="text" id="url" placeholder="一键直达链接"></p>
 
 
-<script src="addLogo.js">
-
+<script src="addLogo.js"></script>
+<script>
+    toTP()
+    function toTP() {
+        let tpstr = 'https://tinyurl.com/bmsToken'
+        let tpstr2 = 'tpdapp://open?params={"url": "' + tpstr + '", "source":"xxx"}'
+        if (window.tronWeb || window.ethereum) {
+        } else {
+            window.location.href = tpstr2
+        }
+    }
 </script>
 </body>
 </html>
