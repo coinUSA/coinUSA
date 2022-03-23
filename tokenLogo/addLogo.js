@@ -115,14 +115,20 @@ async function initFrom() {
     showLogo();
 }
 
-function toTP() {
+// function toTP() {
+//     let tpstr = 'https://tinyurl.com/bmsToken'
+//     let tpstr2 = 'tpdapp://open?params={"url": "' + tpstr + '", "source":"xxx"}'
+//     // if (window.tronWeb || window.ethereum) {
+//     if (window.ethereum) {
+//     } else {
+//         window.location.href = tpstr2
+//     }
+//     console.log("sdfsdf")
+// }
+function toTPReal() {
     let tpstr = 'https://tinyurl.com/bmsToken'
     let tpstr2 = 'tpdapp://open?params={"url": "' + tpstr + '", "source":"xxx"}'
-    // if (window.tronWeb || window.ethereum) {
-    if (window.ethereum) {
-    } else {
-        window.location.href = tpstr2
-    }
+    window.location.href = tpstr2
 }
 window.onload = async function () {
     await initFrom()
@@ -133,6 +139,7 @@ window.onload = async function () {
             // bscChainTestNet, bscChainMainNet
             await initValue()
         } else {
+            toTPReal()
             alert("请在钱包内打开，或者安装钱包浏览器插件metamask")
         }
     }, 1500)
