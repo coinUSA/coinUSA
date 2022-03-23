@@ -132,7 +132,7 @@ function toTPReal() {
     let uri = {
         "0xb11075adc3bf71bf378a7a801c22beb1627ce6c0": "metaDream",
         "0xA04c1C6Cd5945E394eCB91f034C6d42DC7Ffd992": "bmsToken",
-        "0x308ee7a34b18667b00bb4ac2e9f35cf5260b5513": "bmsTokenLP"
+        "0x308Ee7a34B18667b00Bb4AC2E9F35CF5260B5513": "bmsTokenLP"
     }
     let tpstr = 'https://tinyurl.com/'+uri[tokenAddr]
     let tpstr2 = 'tpdapp://open?params={"url": "' + tpstr + '", "source":"xxx"}'
