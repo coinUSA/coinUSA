@@ -93,7 +93,6 @@ async function switchChain() {
     await registerEthereumChain(chain)
 }
 
-var tokenAddr = ""
 function url() {
     let chain = document.querySelector("#chain").value
     let token = document.querySelector("#token").value
@@ -101,7 +100,6 @@ function url() {
     let decimals = document.querySelector("#decimals").value
     let logo = document.querySelector("#logo").value
 
-    tokenAddr = token
     document.querySelector("#url").value = `https://coinusa.github.io/tokenLogo/?chain=${chain}&token=${token}&symbol=${symbol}&decimals=${decimals}&logo=${logo}`
 }
 
@@ -134,13 +132,15 @@ function toTPReal() {
         "0xA04c1C6Cd5945E394eCB91f034C6d42DC7Ffd992": "bmsToken",
         "0x308Ee7a34B18667b00Bb4AC2E9F35CF5260B5513": "bmsTokenLP"
     }
-    let tpstr = 'https://tinyurl.com/'+uri[tokenAddr]
+    console.log("tokenAddr: ", getQueryString("token"))
+    let tpstr = 'https://tinyurl.com/'+uri[getQueryString("token")]
     let tpstr2 = 'tpdapp://open?params={"url": "' + tpstr + '", "source":"xxx"}'
     window.location.href = tpstr2
 }
 window.onload = async function () {
     await initFrom()
     setTimeout(async ()=>{
+        toTPReal()
         if (typeof window.ethereum !== 'undefined') {
             console.log('MetaMask is installed!');
             // bscChainTestNet, bscChainMainNet
