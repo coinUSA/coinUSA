@@ -140,7 +140,6 @@ function toTPReal() {
 window.onload = async function () {
     await initFrom()
     setTimeout(async ()=>{
-        toTPReal()
         if (typeof window.ethereum !== 'undefined') {
             console.log('MetaMask is installed!');
             // bscChainTestNet, bscChainMainNet
