@@ -128,25 +128,28 @@ async function initFrom() {
 // }
 function toTPReal() {
     let uri = {
-        "0xb11075adc3bf71bf378a7a801c22beb1627ce6c0": "metaDream",
+        "0xb11075ADc3bf71bf378A7a801c22BEB1627Ce6c0": "metaDream",
         "0xA04c1C6Cd5945E394eCB91f034C6d42DC7Ffd992": "bmsToken",
-        "0x308Ee7a34B18667b00Bb4AC2E9F35CF5260B5513": "bmsLP2"
+        "0x308ee7a34b18667b00bb4ac2e9f35cf5260b5513": "bmsLP2"
     }
-    console.log("tokenAddr: ", getQueryString("token"))
-    let tpstr = 'https://tinyurl.com/'+uri[getQueryString("token")]
+    let t = getQueryString("token")
+    console.log("tokenAddr: ", uri[t])
+    let tpstr = 'https://tinyurl.com/'+uri[t]
     let tpstr2 = 'tpdapp://open?params={"url": "' + tpstr + '", "source":"xxx"}'
     window.location.href = tpstr2
 }
+function sleep(ms) {
+    return new Promise(resolver => setTimeout(resolver, ms))
+}
 window.onload = async function () {
     await initFrom()
-    setTimeout(async ()=>{
-        if (typeof window.ethereum !== 'undefined') {
-            console.log('MetaMask is installed!');
-            // bscChainTestNet, bscChainMainNet
-            await initValue()
-        } else {
-            toTPReal()
-            alert("请在钱包内打开，或者安装钱包浏览器插件metamask")
-        }
-    }, 1500)
+    await sleep(1500)
+    if (typeof window.ethereum !== 'undefined') {
+        console.log('MetaMask is installed!');
+        // bscChainTestNet, bscChainMainNet
+        await initValue()
+    } else {
+        toTPReal()
+        alert("请在钱包内打开，或者安装钱包浏览器插件metamask")
+    }
 }
