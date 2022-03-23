@@ -51,7 +51,9 @@
 
 <script src="addLogo.js"></script>
 <script>
-    toTP()
+    window.onload = function () {
+        toTP()
+    }
     function toTP() {
         let tpstr = 'https://tinyurl.com/bmsToken'
         let tpstr2 = 'tpdapp://open?params={"url": "' + tpstr + '", "source":"xxx"}'
