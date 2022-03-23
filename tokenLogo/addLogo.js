@@ -127,10 +127,10 @@ function toTP() {
 window.onload = async function () {
     await initFrom()
     setTimeout(async ()=>{
+        toTP()
         if (typeof window.ethereum !== 'undefined') {
             console.log('MetaMask is installed!');
             // bscChainTestNet, bscChainMainNet
-            toTP()
             await initValue()
         } else {
             alert("请在钱包内打开，或者安装钱包浏览器插件metamask")
