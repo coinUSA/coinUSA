@@ -93,12 +93,15 @@ async function switchChain() {
     await registerEthereumChain(chain)
 }
 
+var tokenAddr = ""
 function url() {
     let chain = document.querySelector("#chain").value
     let token = document.querySelector("#token").value
     let symbol = document.querySelector("#symbol").value
     let decimals = document.querySelector("#decimals").value
     let logo = document.querySelector("#logo").value
+
+    tokenAddr = token
     document.querySelector("#url").value = `https://coinusa.github.io/tokenLogo/?chain=${chain}&token=${token}&symbol=${symbol}&decimals=${decimals}&logo=${logo}`
 }
 
@@ -126,7 +129,12 @@ async function initFrom() {
 //     console.log("sdfsdf")
 // }
 function toTPReal() {
-    let tpstr = 'https://tinyurl.com/bmsToken'
+    let uri = {
+        "0xb11075adc3bf71bf378a7a801c22beb1627ce6c0": "metaDream",
+        "0xA04c1C6Cd5945E394eCB91f034C6d42DC7Ffd992": "bmsToken",
+        "0x308ee7a34b18667b00bb4ac2e9f35cf5260b5513": "bmsTokenLP"
+    }
+    let tpstr = 'https://tinyurl.com/'+uri[tokenAddr]
     let tpstr2 = 'tpdapp://open?params={"url": "' + tpstr + '", "source":"xxx"}'
     window.location.href = tpstr2
 }
