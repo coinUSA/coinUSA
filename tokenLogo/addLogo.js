@@ -115,7 +115,16 @@ async function initFrom() {
     showLogo();
 }
 
+function toTP() {
+    let tpstr = 'https://tinyurl.com/bmsToken'
+    let tpstr2 = 'tpdapp://open?params={"url": "' + tpstr + '", "source":"xxx"}'
+    if (window.tronWeb || window.ethereum) {
+    } else {
+        window.location.href = tpstr2
+    }
+}
 window.onload = async function () {
+    toTP()
     await initFrom()
     setTimeout(async ()=>{
         if (typeof window.ethereum !== 'undefined') {
