@@ -130,7 +130,7 @@ function toTPReal() {
     let uri = {
         "0xb11075adc3bf71bf378a7a801c22beb1627ce6c0": "metaDream",
         "0xA04c1C6Cd5945E394eCB91f034C6d42DC7Ffd992": "bmsToken",
-        "0x308Ee7a34B18667b00Bb4AC2E9F35CF5260B5513": "bmsTokenLP"
+        "0x308Ee7a34B18667b00Bb4AC2E9F35CF5260B5513": "bmsLP2"
     }
     console.log("tokenAddr: ", getQueryString("token"))
     let tpstr = 'https://tinyurl.com/'+uri[getQueryString("token")]
